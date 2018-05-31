@@ -1,0 +1,463 @@
+
+.contenedor{
+    background:url(../img/backPrincipal.jpg);
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.contenedorform{
+    background:#101010;
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+
+.navbar-nav {
+    margin: 7.5px -15px;
+    padding-left: 50px;
+}
+
+.navbar-default {
+    background-color: rgba(65, 65, 65, 0.8);
+    border-color: inherit;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #4cccff;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: white;
+    background-color: inherit;
+    text-transform: uppercase;
+}
+
+.navbar-brand {
+    float: left;
+    height: auto;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.fuentenav{
+    font-family: 'robotoregular', "Lucida Sans Unicode";
+}
+
+.msj{
+    background: none;
+}
+
+.inputs {
+    color: #fff;
+}
+
+.inputs input {
+    display: inline-block;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+    padding-top: 10px;
+    font-family: 'robotothin', "Lucida Sans Unicode";
+    font-size: 20px;
+    color: #fff;
+    font-size: larger;
+    width: 100%;
+    border-bottom-style: dotted;
+}
+
+.inputs textarea {
+    display: inline-block;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+    padding-top: 10px;
+    height: 100px;
+    font-family: 'robotothin', "Lucida Sans Unicode";
+    font-size: larger;
+    width: 100%;
+    color: #fff;
+}
+
+.button input {
+    display: inline-block;
+    background-color: rgba(142, 142, 142, 0.5);
+    border: none;
+    border-radius: 8px;
+    font-family: 'robotothin', "Lucida Sans Unicode";
+    color: #fff;
+    font-size: larger;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 15px;
+
+}
+
+h1 {
+    color: #fff;
+}
+
+.button input:hover {
+    text-decoration: none;
+    color: #16a2da;
+    background: #fff
+}
+
+.contactocentrado{
+    text-align: center;
+    font-family: 'roboto_condensedregular',Helvetica,Arial,sans-serif, "Lucida Sans Unicode";
+    color: #fff;
+}
+
+.formulario{
+    color: white;
+    font-family: 'robotothin', "Lucida Sans Unicode";
+    text-align: center;
+    /*padding: 15px;*/
+
+}
+
+.formulario p {
+    color: #fff;
+    font-size: 20px;
+    font-family: 'robotothin', "Lucida Sans Unicode";
+}
+
+.formulario ul li {
+    color: #fff;
+    font-size: 20px;
+    font-family: 'robotothin', "Lucida Sans Unicode";
+    list-style-type: none;
+}
+
+.formulario ul li a {
+    color: #fff;
+    font-size: 20px;
+    font-family: 'robotothin', "Lucida Sans Unicode";
+
+}
+
+.formulario h3 a {
+    color: #fff;
+    font-size: 20px;
+    font-family: 'robotothin', "Lucida Sans Unicode";
+
+}
+
+.marca{
+    margin: 0;
+    font: inherit;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    border-radius: 4px;
+}
+
+label {
+    display: inherit;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #fff;
+    background-color: rgba(134, 134, 134, 0.30);
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.justificado{
+    text-align: justify;
+}
+
+.panel-footer{
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.panel {
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.panelComentarios {
+    margin-bottom: 35px;
+    background-color: rgba(177, 177, 177, 0.6);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.alert-success {
+    color: #1c581d;
+    background-color: #90f566;
+    border-color: #7aa557;
+}
+
+.alert-danger {
+    color: #3c1615;
+    background-color: #ff6666;
+    border-color: #542a31;
+}
+
+.btn-default {
+    color: #fff;
+    background-color: rgba(175, 174, 174, 0.28);
+    border-color: #848484;
+}
+.centradoBlanco p{
+    color: #fff;
+    text-align: center;
+}
+.tabla{
+
+}
+.botonBorrar {
+    border: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.pg2 {
+    /*background:url(../img/bg4b.jpg);*/
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    -moz-background-size: cover;
+    position:relative;
+}
+.pg3 {
+ /* background:url(../img/bg6.jpg);*/
+ background-size: cover;
+ -webkit-background-size: cover;
+ -o-background-size: cover;
+ -ms-background-size: cover;
+ -moz-background-size: cover;
+ position:relative;
+}
+.pattern {
+    background: rgba(0,0,0,.5) /*url(../img/pattern.png)*/;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /*min-height: 800px;*/
+}
+.cont{
+
+    padding-top: 10%;
+    padding-bottom: 2%;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: 'roboto_condensedregular',Helvetica,Arial,sans-serif, "Lucida Sans Unicode";
+}
+.conthome2{
+    padding: 10px;
+    padding-top: 5%;
+    padding-bottom: 1%;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: 'robotothin', "Lucida Sans Unicode";
+}
+
+.tituloEdit{
+    padding: 10px;
+    padding-top: 3%;
+    padding-bottom: 1%;
+    text-align: center;
+    text-decoration: none;
+/*    text-transform: uppercase;*/
+    color: #ffffff;
+    font-family: 'robotothin', "Lucida Sans Unicode";
+}
+.edit{
+
+    padding: 10px;
+   /* padding-top: 5%;*/
+    padding-bottom: 3%;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+/*    color: #ffffff;*/
+    font-family: 'robotothin', "Lucida Sans Unicode";
+}
+
+.detalleProducto{
+    margin: 10px;
+}
+
+.eliminarImagen{
+    margin-bottom: 5px;
+}
+
+
+
+.alineacionfoto a img{
+  padding-left: 30px;
+}
+
+.estilo h3 {
+  color: #ffffff;
+}
+.estilo li{
+    color: #ffffff;
+}
+th, td {
+    color: white;
+}
+
+.table-striped>tbody>tr {
+    background-color: rgba(66, 66, 66, 0.7);
+}
+
+p{
+    color: #fff;
+}
+
+.enLinea {
+    display: inline-block;
+}
+.borrarEditarCentrado{
+    text-align: center;
+}
+.filtrar {
+    color: white;
+}
+
+#loginError{
+    visibility: hidden;
+}
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: rgba(181, 181, 181, 0.76);
+}
+
+.thumbnail {
+    display: block;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: rgba(255, 0, 0, 0);
+    border: none;
+    border-radius: none;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+}
+
+.form-group {
+    margin-bottom: 5px;
+    color: white;
+}
+
+
+
+.footer_redes a {
+    background: #1f2428 none repeat scroll 0 0;
+    border: 1px solid #1f2428;
+    border-radius: 4px;
+    color: #f00;
+    display: block;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    margin: 2px;
+    padding: 9px 12px;
+    transition: all 0.2s ease 0s;
+    width: 20px;
+}
+
+@media only screen and (max-width: 1920px){
+    .cont p{
+
+        font-size: 500%;
+    }
+    .conthome2 p {
+
+        font-size: 250%;
+    }
+    .tituloEdit p {
+
+        font-size: 250%;
+    }
+}
+
+@media only screen and (max-width: 992px){
+
+    .cont p {
+
+        font-size: 350%;
+    }
+
+    .conthome2 p {
+
+        font-size: 200%;
+    }
+    .tituloEdit p {
+
+        font-size: 200%;
+    }
+}
+
+
+@media only screen and (max-width: 768px){
+
+    .cont p {
+
+        font-size:250%;
+    }
+    .conthome2 p{
+
+        font-size: 150%;
+    }
+    .tituloEdit p{
+
+        font-size: 150%;
+    }
+
+}

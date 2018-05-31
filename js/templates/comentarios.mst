@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 formulario">
+      <div class="msj">
+        <div class="panel panel-default">
+          <div class="panel-body">
+              <div class="refreshComentarios">
+                  <div class="form-group">
+                    <label for="id_marca">Comentarios</label>
+                  </div>
+                  {{#data}}<!--array de comentarios-->
+                    {{#comentarios}}
+                  <div class="panelComentarios panel-default">
+                      <div class="nav-bar-default panel-body">
+                          <p>{{comentario}}</p>
+                          <p>Valoracion = {{valoracion}}</p>
+                          <div class="enLinea">
+                            {{#admin}}
+                            <a href="{{id_comentario}}" class="borrarComentario" name="{{admin}}">
+                              <p><span id="borrar" class="fa fa-trash-o " aria-hidden="true" value="0"></span></p>
+                            </a>
+                            {{/admin}}
+                          </div>
+                      </div>
+
+                  </div>
+                    {{/comentarios}}
+                    {{/data}}
+                  </div>
+                  <!-- {{#data}}
+                      {{#usuario}}
+                            <form href="api/comentarios" class="formComentarios" enctype="multipart/form-data">
+                            <div class="form-group">
+                              <label for="comentario">Agregar Comentario</label>
+                              <input type="text" class="form-control" id="comentario" name="comentario"  placeholder="Comentario..."></input>
+                              <label for="valoracion">Valoracion</label>
+                              <select class="marca" id="valoracion" name="valoracion">
+                              {{#array}}
+                                    <option class="marca" value="{{n}}" name="valoracion">{{n}}</option>
+                              {{/array}}
+                              </select>
+                              {{#idProd}}
+                              <input type="text"  class="idProducto"  id="id_producto"name="id_producto" value="{{id}}" hidden="on"></input>
+                              {{/idProd}}
+                            </div>
+                            <input type="submit" class="btn btn-default" value="Agregar">
+                          </form>
+                    {{/usuario}}
+                  {{/data}} -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
