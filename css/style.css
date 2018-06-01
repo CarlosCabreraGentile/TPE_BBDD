@@ -1,6 +1,6 @@
 
 .contenedor{
-    background:url(../img/backPrincipal.jpg);
+    background:url(../img/imagenfondo.jpg);
     width: 100%;
     display: block;
     position: relative;
@@ -14,7 +14,7 @@
     background-size: cover;
 }
 .contenedorform{
-    background:#101010;
+    background:url(../img/cont2.jpg);
     width: 100%;
     display: block;
     position: relative;
@@ -95,7 +95,7 @@
     border-bottom: 1px solid #fff;
     padding-bottom: 5px;
     padding-top: 10px;
-    height: 100px;
+    height: 200px;
     font-family: 'robotothin', "Lucida Sans Unicode";
     font-size: larger;
     width: 100%;
@@ -137,7 +137,7 @@ h1 {
     color: white;
     font-family: 'robotothin', "Lucida Sans Unicode";
     text-align: center;
-    /*padding: 15px;*/
+    padding: 15px;
 
 }
 
@@ -280,7 +280,7 @@ label {
  position:relative;
 }
 .pattern {
-    background: rgba(0,0,0,.5) /*url(../img/pattern.png)*/;
+    background: rgba(0,0,0,.7) url(../img/pattern.png);
     padding-top: 10px;
     padding-bottom: 10px;
     /*min-height: 800px;*/

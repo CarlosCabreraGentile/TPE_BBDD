@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="row">
 
-				<div class="col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 formulario">
+				<div class="col-xs-12 col-sm-6 col-md-6 formulario">
 					<div class="espacio">
 					<h3>Dirección</h3>
 					<p>2701 San Tomas Expressway
@@ -20,7 +20,7 @@
 				</div>
 
 
-				<!--<div class="col-xs-12 col-sm-6 col-md-6 formulario">
+				<div class="col-xs-12 col-sm-6 col-md-6 formulario">
 					<div>
 						<h3>Formulario</h3>
 						<div class="msj">
@@ -43,7 +43,7 @@
 							</form>
 						</div>
 					</div>
-				</div>-->
+				</div>
 
 			</div>
 		</div>

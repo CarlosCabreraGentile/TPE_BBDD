@@ -2,6 +2,12 @@
 class ProductosModel extends Model
 {
   /*FUNCION PARA TRAER LOS PRODUCTOS DE LA TABLA*/
+  function getdistribuidor(){
+    $sentencia = $this->db->prepare("select id_distribuidor,nombre from distribuidornac where id_distribuidor=278");//producto es la tabla de la BBDD
+    $sentencia->execute();
+    echo "entre";
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
   function getProductos(){
     $sentencia = $this->db->prepare("select * from producto");//producto es la tabla de la BBDD
     $sentencia->execute();
