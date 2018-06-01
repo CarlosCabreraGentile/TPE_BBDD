@@ -84,6 +84,8 @@ function getForm (datos) {
     }//Cierro el SUCCESS
   });
 }
+
+
 function crearComentario() {
   let coment={
       "comentario":$("#comentario").val(),
@@ -265,3 +267,10 @@ $(document).on('click','.borrarComentario', function(event){
       borrarComentario(idComentario,admin);
     });
 });
+
+
+$(document).on('click', '.cc-date', function () { 
+  event.preventDefault();
+  format:"dd/mm/yyyy"
+});
+
