@@ -202,7 +202,7 @@ ALTER TABLE GR04_Huesped_Reserva ADD CONSTRAINT FK_GR04_Huesped_Reserva_Reserva
 -- Reference: FK_Pago_Reserva (table: Pago)
 ALTER TABLE GR04_Pago ADD CONSTRAINT FK_GR04_Pago_Reserva
     FOREIGN KEY (id_reserva)
-    REFERENCES GR04_Tipo_Pago (id_reserva)  
+    REFERENCES GR04_Reserva (id_reserva)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
@@ -210,7 +210,7 @@ ALTER TABLE GR04_Pago ADD CONSTRAINT FK_GR04_Pago_Reserva
 -- Reference: FK_Pago_Tipo_Pago (table: Pago)
 ALTER TABLE GR04_Pago ADD CONSTRAINT FK_GR04_Pago_Tipo_Pago
     FOREIGN KEY (id_tipo_pago)
-    REFERENCES Tipo_Pago (id_tipo_pago)  
+    REFERENCES GR04_Tipo_Pago (id_tipo_pago)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
