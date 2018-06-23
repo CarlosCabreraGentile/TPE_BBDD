@@ -25,12 +25,12 @@ INSERT INTO GR04_Tipo_Dpto(id_tipo_depto,cant_habitaciones,cant_banios,cant_max_
 INSERT INTO GR04_Tipo_Dpto(id_tipo_depto,cant_habitaciones,cant_banios,cant_max_huespedes) VALUES (5, 3, 3, 9);
 INSERT INTO GR04_Tipo_Dpto(id_tipo_depto,cant_habitaciones,cant_banios,cant_max_huespedes) VALUES (6, 1, 1, 2);
 --/*insert a la tabla departamento*/
-INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche,costo_limpieza) VALUES (1,'muy feo',114,1,1,'12',24.5,20);
-INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche,costo_limpieza) VALUES (2,'muy lindo',120,2,1,'123',24.5,20);
-INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche,costo_limpieza) VALUES (3,'muy feo',130,3,1,'123',24.5,20);
-INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche,costo_limpieza) VALUES (4,'muy chico',90,4,1,'125',24.5,10);
-INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche,costo_limpieza) VALUES (5,'muy grande',140,5,1,'125',24.5,30);
-INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche,costo_limpieza) VALUES (6,'hermoso',140,6,1,'125',24.5,40);
+INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche,costo_limpieza, ciudad) VALUES (1,'muy feo',114,1,1,'12',24.5,20,'San Francisco');
+INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche,costo_limpieza, ciudad) VALUES (2,'muy lindo',120,2,1,'123',24.5,20,'New York');
+INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche,costo_limpieza, ciudad) VALUES (3,'muy feo',130,3,1,'123',24.5,20,'Los Angeles');
+INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche,costo_limpieza, ciudad) VALUES (4,'muy chico',90,4,1,'125',24.5,10,'Miami');
+INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche,costo_limpieza, ciudad) VALUES (5,'muy grande',140,5,1,'125',24.5,30,'Las Vegas');
+INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche,costo_limpieza, ciudad) VALUES (6,'hermoso',140,6,1,'125',24.5,40,'San Diego');
 --/*insert a la tabla tipo_pago*/
 INSERT INTO GR04_Tipo_Pago(id_tipo_pago,nombre) VALUES (1, 'Visa');
 INSERT INTO GR04_Tipo_Pago(id_tipo_pago,nombre) VALUES (2, 'Mastercard');
