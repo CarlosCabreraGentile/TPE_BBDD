@@ -37,7 +37,7 @@ CREATE TABLE GR04_Departamento (
 
 -- Table: Estado_Luego_Ocupacion_Reserva
 CREATE TABLE GR04_EstadoLuegoOcupacion (
-    fecha int  NOT NULL,
+    fecha date  NOT NULL,
     id_reserva bigint  NOT NULL,
     comentario varchar(2048)  NOT NULL,
     CONSTRAINT PK_GR04_EstadoLuegoOcupacion PRIMARY KEY (fecha,id_reserva)

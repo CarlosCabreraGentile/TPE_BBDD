@@ -1,8 +1,4 @@
---/*insert a la tabla tipodocumento*/
-INSERT INTO GR04_tipodocumento(idtipodocumento,tipo_doc) VALUES (1,'DNI');
-INSERT INTO GR04_tipodocumento(idtipodocumento,tipo_doc) VALUES (2,'LIB');
-INSERT INTO GR04_tipodocumento(idtipodocumento,tipo_doc) VALUES (3,'PAS');
-INSERT INTO GR04_tipodocumento(idtipodocumento,tipo_doc) VALUES (4,'CED');
+
 --/*insert a la tabla persona*/
 INSERT INTO GR04_persona(tipo_doc,nro_doc,apellido,nombre,fecha_nac,e_mail) VALUES(1,'12','guerra','maxi','27-9-1985','guerramdg@gmail.com');
 INSERT INTO GR04_persona(tipo_doc,nro_doc,apellido,nombre,fecha_nac,e_mail) VALUES(1,'123','perez','carlos','27-9-1985','perez@gmail.com');
@@ -13,14 +9,14 @@ INSERT INTO GR04_persona(tipo_doc,nro_doc,apellido,nombre,fecha_nac,e_mail) VALU
 INSERT INTO GR04_persona(tipo_doc,nro_doc,apellido,nombre,fecha_nac,e_mail) VALUES(1,'223','gonzalez','pedro','17-10-1992','gonzalez@gmail.com');
 INSERT INTO GR04_persona(tipo_doc,nro_doc,apellido,nombre,fecha_nac,e_mail) VALUES(1,'224','fernandez','maria','05-04-1981','fernandez@gmail.com');
 --/*insert a la tabla Huesped*/
-INSERT INTO GR04_huesped(tipo_doc,nro_doc) VALUES(1,'12'); 
-INSERT INTO GR04_huesped(tipo_doc,nro_doc) VALUES(1,'123'); 
-INSERT INTO GR04_huesped(tipo_doc,nro_doc) VALUES(1,'124'); 
-INSERT INTO GR04_huesped(tipo_doc,nro_doc) VALUES(1,'125'); 
-INSERT INTO GR04_huesped(tipo_doc,nro_doc) VALUES(1,'126'); 
-INSERT INTO GR04_huesped(tipo_doc,nro_doc) VALUES(1,'222'); 
-INSERT INTO GR04_huesped(tipo_doc,nro_doc) VALUES(1,'223'); 
-INSERT INTO GR04_huesped(tipo_doc,nro_doc) VALUES(1,'224'); 
+INSERT INTO GR04_huesped(tipo_doc,nro_doc) VALUES(1,'12');
+INSERT INTO GR04_huesped(tipo_doc,nro_doc) VALUES(1,'123');
+INSERT INTO GR04_huesped(tipo_doc,nro_doc) VALUES(1,'124');
+INSERT INTO GR04_huesped(tipo_doc,nro_doc) VALUES(1,'125');
+INSERT INTO GR04_huesped(tipo_doc,nro_doc) VALUES(1,'126');
+INSERT INTO GR04_huesped(tipo_doc,nro_doc) VALUES(1,'222');
+INSERT INTO GR04_huesped(tipo_doc,nro_doc) VALUES(1,'223');
+INSERT INTO GR04_huesped(tipo_doc,nro_doc) VALUES(1,'224');
 --/*insert a la tabla Tipo_Depto*/
 INSERT INTO GR04_Tipo_Dpto(id_tipo_depto,cant_habitaciones,cant_banios,cant_max_huespedes) VALUES (1, 2, 1, 4);
 INSERT INTO GR04_Tipo_Dpto(id_tipo_depto,cant_habitaciones,cant_banios,cant_max_huespedes) VALUES (2, 1, 2, 1);
@@ -29,43 +25,57 @@ INSERT INTO GR04_Tipo_Dpto(id_tipo_depto,cant_habitaciones,cant_banios,cant_max_
 INSERT INTO GR04_Tipo_Dpto(id_tipo_depto,cant_habitaciones,cant_banios,cant_max_huespedes) VALUES (5, 3, 3, 9);
 INSERT INTO GR04_Tipo_Dpto(id_tipo_depto,cant_habitaciones,cant_banios,cant_max_huespedes) VALUES (6, 1, 1, 2);
 --/*insert a la tabla departamento*/
-INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche) VALUES (1,'muy feo',114,1,1,'12',24.5);
-INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche) VALUES (2,'muy lindo',120,2,1,'123',24.5);
-INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche) VALUES (3,'muy feo',130,3,1,'123',24.5);
-INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche) VALUES (4,'muy chico',90,4,1,'125',24.5);
-INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche) VALUES (5,'muy grande',140,5,1,'125',24.5);
-INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche) VALUES (6,'hermoso',140,5,1,'125',24.5);
+INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche,costo_limpieza) VALUES (1,'muy feo',114,1,1,'12',24.5,20);
+INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche,costo_limpieza) VALUES (2,'muy lindo',120,2,1,'123',24.5,20);
+INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche,costo_limpieza) VALUES (3,'muy feo',130,3,1,'123',24.5,20);
+INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche,costo_limpieza) VALUES (4,'muy chico',90,4,1,'125',24.5,10);
+INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche,costo_limpieza) VALUES (5,'muy grande',140,5,1,'125',24.5,30);
+INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche,costo_limpieza) VALUES (6,'hermoso',140,6,1,'125',24.5,40);
 --/*insert a la tabla tipo_pago*/
-INSERT INTO GR04_Tipo_Pago(id_tipo_pago,empresa) VALUES (1, 'Visa');
-INSERT INTO GR04_Tipo_Pago(id_tipo_pago,empresa) VALUES (2, 'Mastercard');
-INSERT INTO GR04_Tipo_Pago(id_tipo_pago,empresa) VALUES (3, 'American Express');
-INSERT INTO GR04_Tipo_Pago(id_tipo_pago,empresa) VALUES (4, 'Pago Facil');
-INSERT INTO GR04_Tipo_Pago(id_tipo_pago,empresa) VALUES (5, 'Rapipago');
-INSERT INTO GR04_Tipo_Pago(id_tipo_pago,empresa) VALUES (6, 'Interbank');
+INSERT INTO GR04_Tipo_Pago(id_tipo_pago,nombre) VALUES (1, 'Visa');
+INSERT INTO GR04_Tipo_Pago(id_tipo_pago,nombre) VALUES (2, 'Mastercard');
+INSERT INTO GR04_Tipo_Pago(id_tipo_pago,nombre) VALUES (3, 'American Express');
+INSERT INTO GR04_Tipo_Pago(id_tipo_pago,nombre) VALUES (4, 'Pago Facil');
+INSERT INTO GR04_Tipo_Pago(id_tipo_pago,nombre) VALUES (5, 'Rapipago');
+INSERT INTO GR04_Tipo_Pago(id_tipo_pago,nombre) VALUES (6, 'Interbank');
 --/*insert a la tabla habitacion*/
 INSERT INTO GR04_habitacion(id_dpto,id_habitacion,posib_camas_simples,posib_camas_dobles,posib_camas_kind,tv,sillon,frigobar,mesa,sillas,cocina)
-VALUES(1,1,2,1,0,true,true,true,true,false,false);
+VALUES(1,1,2,1,0,true,1,true,true,6,false);/*depto 1*/
 INSERT INTO GR04_habitacion(id_dpto,id_habitacion,posib_camas_simples,posib_camas_dobles,posib_camas_kind,tv,sillon,frigobar,mesa,sillas,cocina)
-VALUES(2,1,2,1,1,true,true,true,true,false,false);
+VALUES(1,2,2,1,0,true,1,true,true,6,false);/*depto 1*/
 INSERT INTO GR04_habitacion(id_dpto,id_habitacion,posib_camas_simples,posib_camas_dobles,posib_camas_kind,tv,sillon,frigobar,mesa,sillas,cocina)
-VALUES(3,1,2,1,0,true,true,true,true,false,false);
+VALUES(2,3,2,1,1,true,1,true,true,6,false);/*depto 2*/
 INSERT INTO GR04_habitacion(id_dpto,id_habitacion,posib_camas_simples,posib_camas_dobles,posib_camas_kind,tv,sillon,frigobar,mesa,sillas,cocina)
-VALUES(4,1,2,1,0,true,true,true,true,false,false);
+VALUES(3,4,2,1,0,true,1,true,true,6,false);/*depto 3*/
 INSERT INTO GR04_habitacion(id_dpto,id_habitacion,posib_camas_simples,posib_camas_dobles,posib_camas_kind,tv,sillon,frigobar,mesa,sillas,cocina)
-VALUES(5,1,2,1,0,true,true,true,true,false,false);
+VALUES(3,5,2,1,0,true,1,true,true,6,false);/*depto 3*/
+INSERT INTO GR04_habitacion(id_dpto,id_habitacion,posib_camas_simples,posib_camas_dobles,posib_camas_kind,tv,sillon,frigobar,mesa,sillas,cocina)
+VALUES(3,6,2,1,0,true,1,true,true,6,false);/*depto 3*/
+INSERT INTO GR04_habitacion(id_dpto,id_habitacion,posib_camas_simples,posib_camas_dobles,posib_camas_kind,tv,sillon,frigobar,mesa,sillas,cocina)
+VALUES(4,7,2,1,0,true,1,true,true,6,false);/*depto 4*/
+INSERT INTO GR04_habitacion(id_dpto,id_habitacion,posib_camas_simples,posib_camas_dobles,posib_camas_kind,tv,sillon,frigobar,mesa,sillas,cocina)
+VALUES(4,8,2,1,0,true,2,true,true,6,false);/*depto 4*/
+INSERT INTO GR04_habitacion(id_dpto,id_habitacion,posib_camas_simples,posib_camas_dobles,posib_camas_kind,tv,sillon,frigobar,mesa,sillas,cocina)
+VALUES(5,9,2,1,0,true,1,true,true,2,false);/*depto 5*/
+INSERT INTO GR04_habitacion(id_dpto,id_habitacion,posib_camas_simples,posib_camas_dobles,posib_camas_kind,tv,sillon,frigobar,mesa,sillas,cocina)
+VALUES(5,10,2,1,0,true,1,true,true,3,false);/*depto 5*/
+INSERT INTO GR04_habitacion(id_dpto,id_habitacion,posib_camas_simples,posib_camas_dobles,posib_camas_kind,tv,sillon,frigobar,mesa,sillas,cocina)
+VALUES(5,11,2,1,0,true,1,true,true,2,false);/*depto 5*/
+INSERT INTO GR04_habitacion(id_dpto,id_habitacion,posib_camas_simples,posib_camas_dobles,posib_camas_kind,tv,sillon,frigobar,mesa,sillas,cocina)
+VALUES(6,12,2,1,0,true,1,true,true,3,false);/*depto 6*/
 /*insert a la reserva*/
-INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,limpieza,tipo_doc,nro_doc)
-VALUES (1,'03-05-2018', '03-05-2018', '10-05-2018', 'Inmediata', 1, 1500, true, 1, '12');
-INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,limpieza,tipo_doc,nro_doc)
-VALUES (2,'12-08-2017', '10-08-2017', '18-08-2017', '', 2, 2500, true, 1, '123');
-INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,limpieza,tipo_doc,nro_doc)
-VALUES (3,'18-01-2017', '25-01-2017', '10-02-2017', 'Tranferencia', 3, 1500, false, 1, '124');
-INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,limpieza,tipo_doc,nro_doc)
-VALUES (4,'25-10-2016', '26-10-2016', '30-10-2016', '', 4, 1100, false, 1, '125');
-INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,limpieza,tipo_doc,nro_doc)
-VALUES (5,'18-07-2018', '18-07-2018', '24-07-2018', 'Deposito', 5, 800, false, 1, '126');
-INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,limpieza,tipo_doc,nro_doc)
-VALUES (6,'09-06-2018', '12-06-2018', '25-06-2018', '', 6, 720, true, 1, '12');
+INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
+VALUES (1,'03-05-2018', '03-05-2018', '10-05-2018', 'Inmediata', 1, 1500, 15, 1, '12');
+INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
+VALUES (2,'12-08-2017', '10-08-2017', '18-08-2017', '', 2, 2500, 20, 1, '123');
+INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
+VALUES (3,'18-01-2017', '25-01-2017', '10-02-2017', 'Tranferencia', 3, 1500, 20, 1, '124');
+INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
+VALUES (4,'25-10-2016', '26-10-2016', '30-10-2016', '', 4, 1100, 15, 1, '125');
+INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
+VALUES (5,'18-07-2018', '18-07-2018', '24-07-2018', 'Deposito', 5, 800, 20, 1, '126');
+INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
+VALUES (6,'09-06-2018', '12-06-2018', '25-06-2018', '', 6, 720, 15, 1, '12');
 --/*insert a la tabla pago*/
 INSERT INTO GR04_Pago(fecha_pago,id_reserva,id_tipo_pago,comentario,importe)
 VALUES ('2017-01-18', 1, 1, 'Pago por tarjeta',25);
@@ -87,12 +97,12 @@ INSERT INTO GR04_costodepto(id_dpto,fecha_desde,fecha_hasta,precio_noche) VALUES
 INSERT INTO GR04_costodepto(id_dpto,fecha_desde,fecha_hasta,precio_noche) VALUES(5,'20-05-2018','06-06-2018',24.5);
 INSERT INTO GR04_costodepto(id_dpto,fecha_desde,fecha_hasta,precio_noche) VALUES(6,'10-05-2018','07-06-2018',24.5);
 /*insert a la tabla estado luego de ocupacion*/
-INSERT INTO GR04_estadoluegoocupacion(id_reserva,fecha,comentario) VALUES(1,'02-06-2018','muy sucio');
-INSERT INTO GR04_estadoluegoocupacion(id_reserva,fecha,comentario) VALUES(1,'03-06-2018','muy sucio');
-INSERT INTO GR04_estadoluegoocupacion(id_reserva,fecha,comentario) VALUES(1,'04-06-2018','muy sucio');
-INSERT INTO GR04_estadoluegoocupacion(id_reserva,fecha,comentario) VALUES(1,'05-06-2018','muy sucio');
-INSERT INTO GR04_estadoluegoocupacion(id_reserva,fecha,comentario) VALUES(1,'06-06-2018','muy sucio');
-INSERT INTO GR04_estadoluegoocupacion(id_reserva,fecha,comentario) VALUES(1,'07-06-2018','muy sucio');
+INSERT INTO GR04_estadoluegoocupacion(fecha,id_reserva,comentario) VALUES('02-06-2018',1,'muy sucio');
+INSERT INTO GR04_estadoluegoocupacion(fecha,id_reserva,comentario) VALUES('03-06-2018',2,'muy sucio');
+INSERT INTO GR04_estadoluegoocupacion(fecha,id_reserva,comentario) VALUES('04-06-2018',3,'muy sucio');
+INSERT INTO GR04_estadoluegoocupacion(fecha,id_reserva,comentario) VALUES('05-06-2018',4,'muy sucio');
+INSERT INTO GR04_estadoluegoocupacion(fecha,id_reserva,comentario) VALUES('06-06-2018',5,'muy sucio');
+INSERT INTO GR04_estadoluegoocupacion(fecha,id_reserva,comentario) VALUES('07-06-2018',6,'muy sucio');
 --/*sinsert a la tabla huesped reserva*/--
 INSERT INTO GR04_Huesped_Reserva(tipo_doc,nro_doc,id_reserva) VALUES (1, '12', 1);
 INSERT INTO GR04_Huesped_Reserva(tipo_doc,nro_doc,id_reserva) VALUES (1, '123', 2);
