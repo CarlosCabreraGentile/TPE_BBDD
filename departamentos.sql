@@ -32,6 +32,7 @@ CREATE TABLE GR04_Departamento (
     nro_doc decimal(11,0)  NOT NULL,
     precio_noche decimal(10,2)  NOT NULL,
     costo_limpieza decimal(10,2)  NOT NULL,
+    ciudad varchar(50)  NOT NULL,
     CONSTRAINT PK_GR04_Departamento PRIMARY KEY (id_dpto)
 );
 

@@ -147,6 +147,94 @@ END;
 $$ language plpgsql;
 
 --PARTE C
+--1)
+CREATE TABLE Dpto_disponibles (
+   id_dpto int not null,
+   disponibilidad varchar(15) not null
+
+);
+CREATE OR REPLACE FUNCTION disponibilidad_dpto(date)
+RETURNS 1 AS
+$$
+DECLARE
+    mi_consulta RECORD;
+BEGIN
+    FOR mi_consulta IN SELECT * FROM GR04_departamento d
+                       JOIN GR04_reserva r ON (r.id_dpto = d.id_dpto)
+
+        LOOP
+        if $1>=mi_consulta.fecha_desde and $1<=mi_consulta.fecha_hasta THEN
+        INSERT INTO Dpto_disponibles VALUES (
+                mi_consulta.id_dpto,
+                'Ocupado'
+               );
+               else
+               INSERT INTO Dpto_disponibles VALUES (
+                       mi_consulta.id_dpto,
+                       'libre'
+                      );
+               END if;
+   END LOOP;
+    RETURN 1;
+END;
+$$
+LANGUAGE plpgsql;
+
+v2
+CREATE OR REPLACE FUNCTION disponibilidad_dpto(date)
+RETURNS TABLE (id_dpto int, Disponibilidad VARCHAR)  AS
+$$
+DECLARE
+    mi_consulta RECORD;
+BEGIN
+    FOR mi_consulta IN SELECT * FROM GR04_departamento d
+                       JOIN GR04_reserva r ON (r.id_dpto = d.id_dpto)
+
+        LOOP
+        if $1>=mi_consulta.fecha_desde and $1<=mi_consulta.fecha_hasta THEN
+
+               id_dpto:= mi_consulta.id_dpto;
+               Disponibilidad:='Ocupado';
+
+               else
+               id_dpto:= mi_consulta.id_dpto;
+               Disponibilidad:='Libre';
+               END if;
+ RETURN next;
+   END LOOP;
+
+END;
+$$
+LANGUAGE plpgsql;
+--2)
+CREATE OR REPLACE FUNCTION disponibilidad_dpto_en_rango_fechas(fecha1 date,fecha2 date,city varchar(50))
+RETURNS TABLE (id_dpto int, Disponibilidad VARCHAR)  AS
+$$
+DECLARE
+    mi_consulta RECORD;
+BEGIN
+    FOR mi_consulta IN SELECT * FROM GR04_departamento d
+                       JOIN GR04_reserva r ON (r.id_dpto = d.id_dpto)
+                       WHERE ciudad=city
+
+        LOOP
+        IF (((fecha1>=mi_consulta.fecha_desde and fecha1<=mi_consulta.fecha_hasta) or (fecha2>=mi_consulta.fecha_desde and fecha2<=mi_consulta.fecha_hasta)) and city=mi_consulta.ciudad) THEN
+               id_dpto:= mi_consulta.id_dpto;
+               Disponibilidad:='Ocupado';
+               else
+               id_dpto:= mi_consulta.id_dpto;
+               Disponibilidad:='Libre';
+               end if;
+ RETURN next;
+   END LOOP;
+END;
+$$
+LANGUAGE plpgsql;
+select *
+from gr04_departamento d
+join gr04_reserva r on(r.id_dpto=d.id_dpto)
+
+--PARTE D
 --Listado de todos los departamentos del sistema junto con la recaudación de los mismos en los últimos 6 meses.
 create view departamentos_recaudacion_ultimos_6_meses as
 select d.*, COALESCE(SUM(p.importe), 0)
