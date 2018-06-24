@@ -6,6 +6,10 @@ ALTER TABLE gr04_reserva
 ADD CONSTRAINT fechas_reserva
 CHECK(fecha_hasta>fecha_desde)
 
+--INSERT EN RESERVA QUE ROMPE LA RESTRICCION
+--INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
+--VALUES (1,'03-05-2018', '10-05-2018', '06-05-2018', 'Inmediata', 1, 1500, 15, 1, '12');
+
 --b Que el detalle de las habitaciones sea consistente con el tipo de departamento, 
 --es decir que si el tipo de departamento es de 2 habitaciones, en el detalle se consideren como máximo 2 habitaciones.
 CREATE TRIGGER Tipo_Depto_Habitacion
@@ -30,6 +34,19 @@ RETURN NEW;
 END;
 
 $$ language plpgsql;
+
+--INSERT HABITACIONES EN UN DEPARTAMENTO QUE ROMPE LA RESTRICCION
+--SE CREA UN TIPO DE DEPARTAMENTO CON 2 HABITACIONES
+--INSERT INTO GR04_Tipo_Dpto(id_tipo_depto,cant_habitaciones,cant_banios,cant_max_huespedes) VALUES (1, 2, 1, 4);
+--SE CREA UN DEPARTAMENTO QUE COINCIDE CON EL TIPO DE DEPARTAMENTO
+--INSERT INTO GR04_departamento(id_dpto,descripcion,superficie,id_tipo_depto,tipo_doc,nro_doc,precio_noche,costo_limpieza, ciudad) VALUES (1,'muy feo',114,1,1,'12',24.5,20,'San Francisco');
+--SE AGREGAN 3 HABITACIONES(SE ROMPE)
+--INSERT INTO GR04_habitacion(id_dpto,id_habitacion,posib_camas_simples,posib_camas_dobles,posib_camas_kind,tv,sillon,frigobar,mesa,sillas,cocina)
+--VALUES(1,1,2,1,0,true,1,true,true,6,false);
+--INSERT INTO GR04_habitacion(id_dpto,id_habitacion,posib_camas_simples,posib_camas_dobles,posib_camas_kind,tv,sillon,frigobar,mesa,sillas,cocina)
+--VALUES(1,2,2,1,0,true,1,true,true,8,false);
+--INSERT INTO GR04_habitacion(id_dpto,id_habitacion,posib_camas_simples,posib_camas_dobles,posib_camas_kind,tv,sillon,frigobar,mesa,sillas,cocina)
+--VALUES(1,3,1,2,0,true,2,true,true,4,true);
 
 --c Que tanto la persona que realiza la reserva como los huéspedes no sea el propietario del departamento
 CREATE TRIGGER Reserva_no_dueño
