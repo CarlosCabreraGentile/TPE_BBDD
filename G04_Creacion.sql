@@ -302,7 +302,7 @@ VALUES(6,12,2,1,0,true,1,true,true,3,false);
 INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
 VALUES (1,'2018-05-03', '2018-05-03', '2018-05-10', 'Inmediata', 1, 1500, 15, 1, '12');
 INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
-VALUES (2,'2017-08-12', '2017-08-10', '2017-08-10', '', 2, 2500, 20, 1, '123');
+VALUES (2,'2017-08-12', '2017-08-10', '2017-08-11', '', 2, 2500, 20, 1, '123');
 INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
 VALUES (3,'2017-01-18', '2017-01-25', '2017-02-10', 'Tranferencia', 3, 1500, 20, 1, '124');
 INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)

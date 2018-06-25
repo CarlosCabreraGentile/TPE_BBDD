@@ -4,7 +4,7 @@
 --sea menor que la fecha de finalización.
 ALTER TABLE gr04_reserva
 ADD CONSTRAINT fechas_reserva
-CHECK(fecha_hasta>fecha_desde)
+CHECK(fecha_hasta>fecha_desde);
 
 --INSERT EN RESERVA QUE ROMPE LA RESTRICCION
 --INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
@@ -22,12 +22,6 @@ CHECK(fecha_hasta>fecha_desde)
 --from gr04_habitacion h
 --group by id_dpto
 --having id_dpto=d.id_dpto))
-
-CREATE TRIGGER TR_GR04_Tipo_Depto_Habitacion
-AFTER INSERT OR UPDATE of id_tipo_depto ON GR04_departamento
-FOR EACH ROW
-EXECUTE PROCEDURE control_cant_habitaciones_departamento();
-
 CREATE OR REPLACE FUNCTION TRFN_GR04_Control_Cant_Habitaciones_Departamento()
 RETURNS trigger AS $$
 BEGIN
@@ -45,6 +39,11 @@ RETURN NEW;
 END;
 
 $$ language plpgsql;
+
+CREATE TRIGGER TR_GR04_Tipo_Depto_Habitacion
+AFTER INSERT OR UPDATE of id_tipo_depto ON GR04_departamento
+FOR EACH ROW
+EXECUTE PROCEDURE TRFN_GR04_Control_Cant_Habitaciones_Departamento();
 
 --INSERT HABITACIONES EN UN DEPARTAMENTO QUE ROMPE LA RESTRICCION
 --SE AGREGA UNA TERCERA HABITACIONES(SE ROMPE)
@@ -67,16 +66,10 @@ $$ language plpgsql;
 --from gr04_departamento d
 --join gr04_reserva r on (r.id_dpto=d.id_dpto)
 --where d.tipo_doc=r.tipo_doc and d.nro_doc=r.nro_doc))
-
-CREATE TRIGGER TR_GR04_Reserva_no_dueño
-AFTER INSERT OR UPDATE ON GR04_reserva
-FOR EACH ROW
-EXECUTE PROCEDURE control_dueño_no_reserva();
-
 CREATE OR REPLACE FUNCTION TRFN_GR04_Control_Dueño_No_Reserva()
 RETURNS trigger AS $$
 BEGIN
-	IF(EXISTS (SELECT 1
+  IF(EXISTS (SELECT 1
   FROM gr04_departamento d
   JOIN gr04_reserva r ON (r.id_dpto=d.id_dpto)
   WHERE d.tipo_doc=new.tipo_doc AND d.nro_doc=new.nro_doc))
@@ -88,19 +81,18 @@ END;
 
 $$ language plpgsql;
 
+CREATE TRIGGER TR_GR04_Reserva_no_dueño
+AFTER INSERT OR UPDATE ON GR04_reserva
+FOR EACH ROW
+EXECUTE PROCEDURE TRFN_GR04_Control_Dueño_No_Reserva();
+
 --INSERT DE UNA RESERVA POR PARTE DE UN DUEÑO DE DEPARTAMENTO
 --INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
 --VALUES (1,'03-05-2018', '03-05-2018', '10-05-2018', 'Inmediata', 1, 1500, 15, 1, '12');
-
-CREATE TRIGGER TR_GR04_Huesped_Reserva_no_dueño
-AFTER INSERT OR UPDATE ON GR04_reserva
-FOR EACH ROW
-EXECUTE PROCEDURE control_dueño_no_reserva();
-
 CREATE OR REPLACE FUNCTION TRFN_GR04_Control_Huesped_Dueño_No_Reserva()
 RETURNS trigger AS $$
 BEGIN
-	IF(EXISTS (SELECT 1
+  IF(EXISTS (SELECT 1
   FROM gr04_departamento d
   JOIN gr04_reserva r ON (r.id_dpto=d.id_dpto)
   JOIN gr04_huesped_reserva hr ON (hr.id_reserva=r.id_reserva)
@@ -112,6 +104,11 @@ RETURN NEW;
 END;
 
 $$ language plpgsql;
+
+CREATE TRIGGER TR_GR04_Huesped_Reserva_no_dueño
+AFTER INSERT OR UPDATE ON GR04_reserva
+FOR EACH ROW
+EXECUTE PROCEDURE TRFN_GR04_Control_Huesped_Dueño_No_Reserva();
 
 --INSERT DE UN HUESPED RESERVA DUEÑO A UNA RESERVA, SE ROMPE PORQUE EL HUESPED RESERVA ES DUEÑO
 --INSERT INTO GR04_Huesped_Reserva(tipo_doc,nro_doc,id_reserva) VALUES (1, '12', 1);
@@ -129,12 +126,6 @@ $$ language plpgsql;
 --join gr04_huesped_reserva hr on (hr.id_reserva=r.id_reserva)
 --group by r.id_reserva
 --having id_dpto=d.id_dpto)
-
-CREATE TRIGGER TR_GR04_Huesped_Reserva_no_superar_cant_huespedes
-AFTER INSERT OR UPDATE ON gr04_huesped_reserva
-FOR EACH ROW
-EXECUTE PROCEDURE no_superar_cant_huespedes();
-
 CREATE OR REPLACE FUNCTION TRFN_GR04_No_Superar_Cant_Huespedes()
 RETURNS trigger AS $$
 BEGIN
@@ -155,12 +146,6 @@ END;
 
 $$ language plpgsql;
 
---INSERT DE UN HUESPED RESERVA A UNA RESERVA, SE ROMPE PORQUE EXCEDE EL NUMERO DE HUESPEDES POR RESERVA
---INSERT INTO GR04_Huesped_Reserva(tipo_doc,nro_doc,id_reserva) VALUES (1, '125', 2);
-
---C SERVICIOS
-
---1 Por cada departamento en el sistema, de el estado en una fecha determinada, esto es si el mismo está Ocupado o Libre.
 CREATE OR REPLACE FUNCTION TRFN_GR04_Disponibilidad_Dpto(date)
 RETURNS TABLE (id_dpto int, Disponibilidad VARCHAR)  AS
 $$
@@ -186,6 +171,19 @@ BEGIN
 END;
 $$
 LANGUAGE plpgsql;
+
+CREATE TRIGGER TR_GR04_Huesped_Reserva_no_superar_cant_huespedes
+AFTER INSERT OR UPDATE ON gr04_huesped_reserva
+FOR EACH ROW
+EXECUTE PROCEDURE TRFN_GR04_No_Superar_Cant_Huespedes();
+
+--INSERT DE UN HUESPED RESERVA A UNA RESERVA, SE ROMPE PORQUE EXCEDE EL NUMERO DE HUESPEDES POR RESERVA
+--INSERT INTO GR04_Huesped_Reserva(tipo_doc,nro_doc,id_reserva) VALUES (1, '125', 2);
+
+--C SERVICIOS
+
+--1 Por cada departamento en el sistema, de el estado en una fecha determinada, esto es si el mismo está Ocupado o Libre.
+
 
 --2 Dado una rango de fechas y una ciudad, devuelva una lista de departamentos disponibles.
 CREATE OR REPLACE FUNCTION TRFN_GR04_Disponibilidad_Dpto_En_Rango_Fechas(fecha1 date,fecha2 date,city varchar(50))
@@ -218,15 +216,16 @@ LANGUAGE plpgsql;
 
 --1 Devuelva un listado de todos los departamentos del sistema junto con la recaudación de los mismos en los últimos 6 meses.
 CREATE VIEW GR04_Departamentos_Recaudacion_Ultimos_6_Meses AS
-SELECT d.*, COALESCE(SUM(p.importe), 0)
+SELECT d.id_dpto, COALESCE(SUM(p.importe), 0)
 FROM gr04_departamento d
 JOIN gr04_reserva r ON (d.id_dpto = r.id_dpto)
 JOIN gr04_pago p ON (p.id_reserva = r.id_reserva)
 WHERE r.fecha_desde > current_Date - 180
+GROUP BY d.id_dpto;
 
 --2 Devuelva un listado con los departamentos ordenados por ciudad y por mejor rating (estrellas).
 CREATE VIEW GR04_Listado_Ciudad_Por_Nombre_Y_Rating AS
-SELECT d.*, COALESCE(AVG(CAST(c.estrellas AS FLOAT)), 0) AS rating
+SELECT d.id_dpto, COALESCE(AVG(CAST(c.estrellas AS FLOAT)), 0) AS rating
 	FROM gr04_departamento d
 	LEFT JOIN gr04_reserva r ON d.id_dpto = r.id_dpto
 	LEFT JOIN gr04_comentario c ON r.id_reserva = c.id_reserva
