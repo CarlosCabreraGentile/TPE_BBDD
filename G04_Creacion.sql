@@ -235,14 +235,14 @@ ALTER TABLE GR04_Reserva ADD CONSTRAINT FK_GR04_Reserva_Huesped
 -- End of file.
 
 --/*insert a la tabla persona*/
-INSERT INTO GR04_persona(tipo_doc,nro_doc,apellido,nombre,fecha_nac,e_mail) VALUES(1,'12','guerra','maxi','27-9-1985','guerramdg@gmail.com');
-INSERT INTO GR04_persona(tipo_doc,nro_doc,apellido,nombre,fecha_nac,e_mail) VALUES(1,'123','perez','carlos','27-9-1985','perez@gmail.com');
-INSERT INTO GR04_persona(tipo_doc,nro_doc,apellido,nombre,fecha_nac,e_mail) VALUES(1,'124','garcia','marcos','27-9-1985','garcia@gmail.com');
-INSERT INTO GR04_persona(tipo_doc,nro_doc,apellido,nombre,fecha_nac,e_mail) VALUES(1,'125','alonso','silvina','27-9-1985','alonso@gmail.com');
-INSERT INTO GR04_persona(tipo_doc,nro_doc,apellido,nombre,fecha_nac,e_mail) VALUES(1,'126','piagentini','morena','27-9-1985','piagentini@gmail.com');
-INSERT INTO GR04_persona(tipo_doc,nro_doc,apellido,nombre,fecha_nac,e_mail) VALUES(1,'222','lopez','juan','27-9-1995','lopez@gmail.com');
-INSERT INTO GR04_persona(tipo_doc,nro_doc,apellido,nombre,fecha_nac,e_mail) VALUES(1,'223','gonzalez','pedro','17-10-1992','gonzalez@gmail.com');
-INSERT INTO GR04_persona(tipo_doc,nro_doc,apellido,nombre,fecha_nac,e_mail) VALUES(1,'224','fernandez','maria','05-04-1981','fernandez@gmail.com');
+INSERT INTO GR04_persona(tipo_doc,nro_doc,apellido,nombre,fecha_nac,e_mail) VALUES(1,'12','guerra','maxi','1985-9-27','guerramdg@gmail.com');
+INSERT INTO GR04_persona(tipo_doc,nro_doc,apellido,nombre,fecha_nac,e_mail) VALUES(1,'123','perez','carlos','1985-9-27','perez@gmail.com');
+INSERT INTO GR04_persona(tipo_doc,nro_doc,apellido,nombre,fecha_nac,e_mail) VALUES(1,'124','garcia','marcos','1985-9-27','garcia@gmail.com');
+INSERT INTO GR04_persona(tipo_doc,nro_doc,apellido,nombre,fecha_nac,e_mail) VALUES(1,'125','alonso','silvina','1985-9-27','alonso@gmail.com');
+INSERT INTO GR04_persona(tipo_doc,nro_doc,apellido,nombre,fecha_nac,e_mail) VALUES(1,'126','piagentini','morena','1985-9-27','piagentini@gmail.com');
+INSERT INTO GR04_persona(tipo_doc,nro_doc,apellido,nombre,fecha_nac,e_mail) VALUES(1,'222','lopez','juan','1985-9-27','lopez@gmail.com');
+INSERT INTO GR04_persona(tipo_doc,nro_doc,apellido,nombre,fecha_nac,e_mail) VALUES(1,'223','gonzalez','pedro','1985-9-27','gonzalez@gmail.com');
+INSERT INTO GR04_persona(tipo_doc,nro_doc,apellido,nombre,fecha_nac,e_mail) VALUES(1,'224','fernandez','maria','1985-9-27','fernandez@gmail.com');
 --/*insert a la tabla Huesped*/
 INSERT INTO GR04_huesped(tipo_doc,nro_doc) VALUES(1,'12');
 INSERT INTO GR04_huesped(tipo_doc,nro_doc) VALUES(1,'123');
@@ -300,17 +300,17 @@ INSERT INTO GR04_habitacion(id_dpto,id_habitacion,posib_camas_simples,posib_cama
 VALUES(6,12,2,1,0,true,1,true,true,3,false);/*depto 6*/
 /*insert a la reserva*/
 INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
-VALUES (1,'03-05-2018', '03-05-2018', '10-05-2018', 'Inmediata', 1, 1500, 15, 1, '12');
+VALUES (1,'2018-05-03', '2018-05-03', '2018-05-10', 'Inmediata', 1, 1500, 15, 1, '12');
 INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
-VALUES (2,'12-08-2017', '10-08-2017', '18-08-2017', '', 2, 2500, 20, 1, '123');
+VALUES (2,'2017-08-12', '2017-08-10', '2017-08-10', '', 2, 2500, 20, 1, '123');
 INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
-VALUES (3,'18-01-2017', '25-01-2017', '10-02-2017', 'Tranferencia', 3, 1500, 20, 1, '124');
+VALUES (3,'2017-01-18', '2017-01-25', '2017-02-10', 'Tranferencia', 3, 1500, 20, 1, '124');
 INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
-VALUES (4,'25-10-2016', '26-10-2016', '30-10-2016', '', 4, 1100, 15, 1, '125');
+VALUES (4,'2016-10-25', '2016-10-26', '2016-10-30', '', 4, 1100, 15, 1, '125');
 INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
-VALUES (5,'18-07-2018', '18-07-2018', '24-07-2018', 'Deposito', 5, 800, 20, 1, '126');
+VALUES (5,'2018-07-18', '2018-07-18', '2018-07-24', 'Deposito', 5, 800, 20, 1, '126');
 INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
-VALUES (6,'09-06-2018', '12-06-2018', '25-06-2018', '', 6, 720, 15, 1, '12');
+VALUES (6,'2018-06-09', '2018-06-12', '2018-06-25', '', 6, 720, 15, 1, '12');
 --/*insert a la tabla pago*/
 INSERT INTO GR04_Pago(fecha_pago,id_reserva,id_tipo_pago,comentario,importe)
 VALUES ('2017-01-18', 1, 1, 'Pago por tarjeta',25);
@@ -325,19 +325,19 @@ VALUES ('2017-08-05', 5, 5, 'Pago por tarjeta',200);
 INSERT INTO GR04_Pago(fecha_pago,id_reserva,id_tipo_pago,comentario,importe)
 VALUES ('2016-07-16', 6, 6, 'Pago por tarjeta',1500);
 --/*insert a la tabla costo dpto*/
-INSERT INTO GR04_costodepto(id_dpto,fecha_desde,fecha_hasta,precio_noche) VALUES(1,'01-06-2018','02-06-2018',24.5);
-INSERT INTO GR04_costodepto(id_dpto,fecha_desde,fecha_hasta,precio_noche) VALUES(2,'28-05-2018','03-06-2018',24.5);
-INSERT INTO GR04_costodepto(id_dpto,fecha_desde,fecha_hasta,precio_noche) VALUES(3,'02-05-2018','04-06-2018',24.5);
-INSERT INTO GR04_costodepto(id_dpto,fecha_desde,fecha_hasta,precio_noche) VALUES(4,'15-05-2018','05-06-2018',24.5);
-INSERT INTO GR04_costodepto(id_dpto,fecha_desde,fecha_hasta,precio_noche) VALUES(5,'20-05-2018','06-06-2018',24.5);
-INSERT INTO GR04_costodepto(id_dpto,fecha_desde,fecha_hasta,precio_noche) VALUES(6,'10-05-2018','07-06-2018',24.5);
+INSERT INTO GR04_costodepto(id_dpto,fecha_desde,fecha_hasta,precio_noche) VALUES(1,'2018-06-01','2018-06-02',24.5);
+INSERT INTO GR04_costodepto(id_dpto,fecha_desde,fecha_hasta,precio_noche) VALUES(2,'2018-05-28','2018-06-03',24.5);
+INSERT INTO GR04_costodepto(id_dpto,fecha_desde,fecha_hasta,precio_noche) VALUES(3,'2018-05-02','2018-06-04',24.5);
+INSERT INTO GR04_costodepto(id_dpto,fecha_desde,fecha_hasta,precio_noche) VALUES(4,'2018-05-15','2018-06-05',24.5);
+INSERT INTO GR04_costodepto(id_dpto,fecha_desde,fecha_hasta,precio_noche) VALUES(5,'2018-05-20','2018-06-06',24.5);
+INSERT INTO GR04_costodepto(id_dpto,fecha_desde,fecha_hasta,precio_noche) VALUES(6,'2018-05-10','2018-06-07',24.5);
 /*insert a la tabla estado luego de ocupacion*/
-INSERT INTO GR04_estadoluegoocupacion(fecha,id_reserva,comentario) VALUES('02-06-2018',1,'muy sucio');
-INSERT INTO GR04_estadoluegoocupacion(fecha,id_reserva,comentario) VALUES('03-06-2018',2,'muy sucio');
-INSERT INTO GR04_estadoluegoocupacion(fecha,id_reserva,comentario) VALUES('04-06-2018',3,'muy sucio');
-INSERT INTO GR04_estadoluegoocupacion(fecha,id_reserva,comentario) VALUES('05-06-2018',4,'muy sucio');
-INSERT INTO GR04_estadoluegoocupacion(fecha,id_reserva,comentario) VALUES('06-06-2018',5,'muy sucio');
-INSERT INTO GR04_estadoluegoocupacion(fecha,id_reserva,comentario) VALUES('07-06-2018',6,'muy sucio');
+INSERT INTO GR04_estadoluegoocupacion(fecha,id_reserva,comentario) VALUES('2018-06-02',1,'muy sucio');
+INSERT INTO GR04_estadoluegoocupacion(fecha,id_reserva,comentario) VALUES('2018-06-03',2,'muy sucio');
+INSERT INTO GR04_estadoluegoocupacion(fecha,id_reserva,comentario) VALUES('2018-06-04',3,'muy sucio');
+INSERT INTO GR04_estadoluegoocupacion(fecha,id_reserva,comentario) VALUES('2018-06-05',4,'muy sucio');
+INSERT INTO GR04_estadoluegoocupacion(fecha,id_reserva,comentario) VALUES('2018-06-06',5,'muy sucio');
+INSERT INTO GR04_estadoluegoocupacion(fecha,id_reserva,comentario) VALUES('2018-06-07',6,'muy sucio');
 --/*sinsert a la tabla huesped reserva*/--
 INSERT INTO GR04_Huesped_Reserva(tipo_doc,nro_doc,id_reserva) VALUES (1, '12', 1);
 INSERT INTO GR04_Huesped_Reserva(tipo_doc,nro_doc,id_reserva) VALUES (1, '123', 2);
@@ -347,14 +347,14 @@ INSERT INTO GR04_Huesped_Reserva(tipo_doc,nro_doc,id_reserva) VALUES (1, '126', 
 INSERT INTO GR04_Huesped_Reserva(tipo_doc,nro_doc,id_reserva) VALUES (1, '12', 6);
 --/*insert a la tabla comentario*/
 INSERT INTO GR04_Comentario(tipo_doc,nro_doc,id_reserva, fecha_hora_comentario, comentario, estrellas)
-VALUES (1, '12', 1, '10-06-2018','sucio',2);
+VALUES (1, '12', 1, '2018-06-10','sucio',2);
 INSERT INTO GR04_Comentario(tipo_doc,nro_doc,id_reserva, fecha_hora_comentario, comentario, estrellas)
-VALUES (1, '123', 2, '25-10-2017','feo',3);
+VALUES (1, '123', 2, '2017-10-25','feo',3);
 INSERT INTO GR04_Comentario(tipo_doc,nro_doc,id_reserva, fecha_hora_comentario, comentario, estrellas)
-VALUES (1, '124', 3, '17-02-2017','lindo',1);
+VALUES (1, '124', 3, '2017-02-17','lindo',1);
 INSERT INTO GR04_Comentario(tipo_doc,nro_doc,id_reserva, fecha_hora_comentario, comentario, estrellas)
-VALUES (1, '125', 4, '10-1-2017','confortable',5);
+VALUES (1, '125', 4, '2017-01-10','confortable',5);
 INSERT INTO GR04_Comentario(tipo_doc,nro_doc,id_reserva, fecha_hora_comentario, comentario, estrellas)
-VALUES (1, '126', 5, '20-09-2018','agradable',4);
+VALUES (1, '126', 5, '2018-09-20','agradable',4);
 INSERT INTO GR04_Comentario(tipo_doc,nro_doc,id_reserva, fecha_hora_comentario, comentario, estrellas)
-VALUES (1, '12', 6, '03-07-2018','comodo',3);
+VALUES (1, '12', 6, '2018-07-03','comodo',3);
