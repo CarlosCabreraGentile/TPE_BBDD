@@ -3,11 +3,10 @@ include_once('model/GestionHoteleraModel.php');
 
 include_once('view/GestionHoteleraView.php');
 
-class GestionHoteleraController extends SecuredController
+class GestionHoteleraController extends Controller
 {
   function __construct()
   {
-    parent::__construct();
     $this->view = new GestionHoteleraView();
     $this->model = new GestionHoteleraModel();
   }
