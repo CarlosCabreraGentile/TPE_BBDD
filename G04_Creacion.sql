@@ -131,104 +131,104 @@ CREATE TABLE GR04_Tipo_Pago (
 -- Reference: FK_Comentario_Huesped_Reserva (table: Comentario)
 ALTER TABLE GR04_Comentario ADD CONSTRAINT FK_GR04_Comentario_Huesped_Reserva
     FOREIGN KEY (tipo_doc, nro_doc, id_reserva)
-    REFERENCES GR04_Huesped_Reserva (tipo_doc, nro_doc, id_reserva)  
-    NOT DEFERRABLE 
+    REFERENCES GR04_Huesped_Reserva (tipo_doc, nro_doc, id_reserva)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: FK_CostoDepto_Departamento (table: Costo_Depto)
 ALTER TABLE GR04_CostoDepto ADD CONSTRAINT FK_GR04_CostoDepto_Departamento
     FOREIGN KEY (id_dpto)
-    REFERENCES GR04_Departamento (id_dpto)  
-    NOT DEFERRABLE 
+    REFERENCES GR04_Departamento (id_dpto)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: FK_Departamento_Persona (table: Departamento)
 ALTER TABLE GR04_Departamento ADD CONSTRAINT FK_GR04_Departamento_Persona
     FOREIGN KEY (tipo_doc, nro_doc)
-    REFERENCES GR04_Persona (tipo_doc, nro_doc)  
-    NOT DEFERRABLE 
+    REFERENCES GR04_Persona (tipo_doc, nro_doc)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: FK_Departamento_Tipo_Dpto (table: Departamento)
 ALTER TABLE GR04_Departamento ADD CONSTRAINT FK_GR04_Departamento_Tipo_Dpto
     FOREIGN KEY (id_tipo_depto)
-    REFERENCES GR04_Tipo_Dpto (id_tipo_depto)  
-    NOT DEFERRABLE 
+    REFERENCES GR04_Tipo_Dpto (id_tipo_depto)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: FK_Estado_Luego_Ocupacion_Reserva (table: Estado_Luego_Ocupacion_Reserva)
 ALTER TABLE GR04_EstadoLuegoOcupacion ADD CONSTRAINT FK_GR04_EstadoLuegoOcupacion_Reserva
     FOREIGN KEY (id_reserva)
-    REFERENCES GR04_Reserva (id_reserva)  
-    NOT DEFERRABLE 
+    REFERENCES GR04_Reserva (id_reserva)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: FK_Habitacion_Departamento (table: Habitacion)
 ALTER TABLE GR04_Habitacion ADD CONSTRAINT FK_GR04_Habitacion_Departamento
     FOREIGN KEY (id_dpto)
-    REFERENCES GR04_Departamento (id_dpto)  
-    NOT DEFERRABLE 
+    REFERENCES GR04_Departamento (id_dpto)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: FK_Huesped_Persona (table: Huesped)
 ALTER TABLE GR04_Huesped ADD CONSTRAINT FK_GR04_Huesped_Persona
     FOREIGN KEY (tipo_doc, nro_doc)
-    REFERENCES GR04_Persona (tipo_doc, nro_doc)  
-    NOT DEFERRABLE 
+    REFERENCES GR04_Persona (tipo_doc, nro_doc)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: FK_Huesped_Reserva_Huesped (table: Huesped_Reserva)
 ALTER TABLE GR04_Huesped_Reserva ADD CONSTRAINT FK_GR04_Huesped_Reserva_Huesped
     FOREIGN KEY (tipo_doc, nro_doc)
-    REFERENCES GR04_Huesped (tipo_doc, nro_doc)  
-    NOT DEFERRABLE 
+    REFERENCES GR04_Huesped (tipo_doc, nro_doc)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: FK_Huesped_Reserva_Reserva (table: Huesped_Reserva)
 ALTER TABLE GR04_Huesped_Reserva ADD CONSTRAINT FK_GR04_Huesped_Reserva_Reserva
     FOREIGN KEY (id_reserva)
-    REFERENCES GR04_Reserva (id_reserva)  
-    NOT DEFERRABLE 
+    REFERENCES GR04_Reserva (id_reserva)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: FK_Pago_Reserva (table: Pago)
 ALTER TABLE GR04_Pago ADD CONSTRAINT FK_GR04_Pago_Reserva
     FOREIGN KEY (id_reserva)
-    REFERENCES GR04_Reserva (id_reserva)  
-    NOT DEFERRABLE 
+    REFERENCES GR04_Reserva (id_reserva)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: FK_Pago_Tipo_Pago (table: Pago)
 ALTER TABLE GR04_Pago ADD CONSTRAINT FK_GR04_Pago_Tipo_Pago
     FOREIGN KEY (id_tipo_pago)
-    REFERENCES GR04_Tipo_Pago (id_tipo_pago)  
-    NOT DEFERRABLE 
+    REFERENCES GR04_Tipo_Pago (id_tipo_pago)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: FK_Reserva_Departamento (table: Reserva)
 ALTER TABLE GR04_Reserva ADD CONSTRAINT FK_GR04_Reserva_Departamento
     FOREIGN KEY (id_dpto)
-    REFERENCES GR04_Departamento (id_dpto)  
-    NOT DEFERRABLE 
+    REFERENCES GR04_Departamento (id_dpto)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: FK_Reserva_Huesped (table: Reserva)
 ALTER TABLE GR04_Reserva ADD CONSTRAINT FK_GR04_Reserva_Huesped
     FOREIGN KEY (tipo_doc, nro_doc)
-    REFERENCES GR04_Huesped (tipo_doc, nro_doc)  
-    NOT DEFERRABLE 
+    REFERENCES GR04_Huesped (tipo_doc, nro_doc)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
@@ -302,11 +302,11 @@ VALUES(6,12,2,1,0,true,1,true,true,3,false);
 INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
 VALUES (1,'2018-05-03', '2018-05-03', '2018-05-10', 'Inmediata', 1, 1500, 15, 1, '12');
 INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
-VALUES (2,'2017-08-12', '2017-08-10', '2017-08-11', '', 2, 2500, 20, 1, '123');
+VALUES (2,'2018-08-12', '2018-08-10', '2018-08-11', '', 2, 2500, 20, 1, '123');
 INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
-VALUES (3,'2017-01-18', '2017-01-25', '2017-02-10', 'Tranferencia', 3, 1500, 20, 1, '124');
+VALUES (3,'2018-01-18', '2018-01-25', '2018-02-10', 'Tranferencia', 3, 1500, 20, 1, '124');
 INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
-VALUES (4,'2016-10-25', '2016-10-26', '2016-10-30', '', 4, 1100, 15, 1, '125');
+VALUES (4,'2018-10-25', '2018-10-26', '2018-10-30', '', 4, 1100, 15, 1, '125');
 INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)
 VALUES (5,'2018-07-18', '2018-07-18', '2018-07-24', 'Deposito', 5, 800, 20, 1, '126');
 INSERT INTO GR04_Reserva(id_reserva,fecha_reserva,fecha_desde,fecha_hasta,tipo,id_dpto,valor_noche,usa_limpieza,tipo_doc,nro_doc)

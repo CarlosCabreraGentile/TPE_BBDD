@@ -1,27 +1,19 @@
 <?php
-define('DB_NAME', 'db_tarjetas');
-define('DB_USER', 'root');
-define('DB_PASSWORD', '');
-define('DB_HOSTNAME', 'localhost');
-define('DB_FILE','SQL/db_tarjetas.sql');
-
-
-  class Model
-  {
+define('DB','cursada');
+define('HOST','dbases.exa.unicen.edu.ar');
+define('USERNAME','unc_247903');
+define('PASSWORD','123456');
+class Model{
    protected $db;
-   protected $host = "dbases.exa.unicen.edu.ar";
-
-   function __construct()
-   {
-     try {
-         $this->db = new PDO("pgsql:host=localhost;port=5432; dbname=departamentos", 'postgres', 'system011');
-         $this->db->exec('SET search_path TO public');
+   function __construct(){
+     try{ $host = HOST;
+       $dbn = DB;
+       $config = "pgsql:host=$host;port=6432;dbname=$dbn";
+       $this->db = new PDO($config, USERNAME, PASSWORD);
+       $this->db->exec('SET search_path TO unc_247903');
+      }catch (Exception $e)
+      {       echo "ERROR: Trying to conect to the Database";
+       }
      }
-     catch (PDOException $e){
-       echo "ERROR: Trying to connect to the Database";
-       die();
      }
-   }
-  }
-
 ?>
