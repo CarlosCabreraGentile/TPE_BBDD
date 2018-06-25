@@ -12,9 +12,8 @@ class GestionHoteleraView extends View
 
     $this->smarty->display('templates/index.tpl');
   }
-  function  mostrarBuscarHabitaciones($productos, $marcas){
-     $this->smarty->assign('productos', $productos);
-     $this->smarty->assign('marcas', $marcas);
+  function  mostrarBuscarHabitaciones($departamentos){
+     $this->smarty->assign('departamentos', $departamentos);
     $this->smarty->display('templates/gestionHotelera.tpl');
   }
   // function mostrarCrearProductos(){

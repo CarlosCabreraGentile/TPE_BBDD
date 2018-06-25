@@ -14,7 +14,7 @@ define('DB_FILE','SQL/db_tarjetas.sql');
    function __construct()
    {
      try {
-         $this->db = new PDO("pgsql:host=localhost;port=5432; dbname=departamentos", 'postgres', 'system011');
+         $this->db = new PDO("pgsql:host=localhost;port=5432; dbname=departamentos", 'postgres', 'admin');
          $this->db->exec('SET search_path TO public');
      }
      catch (PDOException $e){

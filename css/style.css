@@ -27,6 +27,25 @@
     -o-background-size: cover;
     background-size: cover;
 }
+table{
+  text-align: center;
+}
+
+.fyc-public-holiday {
+  color: black;
+  background-color: orange;
+}
+
+h1{
+  text-align: center;
+}
+
+.libre{
+  background-color: #060606;
+}
+.ocupado{
+  background-color: #aa0606;
+}
 
 .navbar-default .navbar-nav>li>a {
     color: #fff;
