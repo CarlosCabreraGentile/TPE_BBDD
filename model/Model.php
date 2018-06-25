@@ -1,5 +1,5 @@
 <?php
-define('DB','cursada');
+/*define('DB','cursada');
 define('HOST','dbases.exa.unicen.edu.ar');
 define('USERNAME','unc_247903');
 define('PASSWORD','123456');
@@ -16,4 +16,22 @@ class Model{
        }
      }
      }
+*/
+class Model
+  {
+   protected $db;
+   protected $host = "dbases.exa.unicen.edu.ar";
+
+   function __construct()
+   {
+     try {
+         $this->db = new PDO("pgsql:host=localhost;port=5432; dbname=departamentos", 'postgres', 'system011');
+         $this->db->exec('SET search_path TO public');
+     }
+     catch (PDOException $e){
+       echo "ERROR: Trying to connect to the Database";
+       die();
+     }
+   }
+  }
 ?>
